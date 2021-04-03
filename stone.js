@@ -6,16 +6,16 @@ class Stone{
             friction:1,
             density:1.2
         }
-        this.body=Bodies.circle(x,y,d,options)
+        this.body=Bodies.circle(x,y,d/2,options)
         this.diametre=d
         this.image=loadImage("stone.png")
         World.add(world,this.body)
     }
     display(){
         push()
-        translatea(this.body.position.x,this.body.position.y)
+        translate(this.body.position.x,this.body.position.y)
         imageMode(CENTER)
-        image(this.image,0,0,this.diametre)
+        image(this.image,0,0,this.diametre/2,this.diametre/2)
         pop()
     }
 }
