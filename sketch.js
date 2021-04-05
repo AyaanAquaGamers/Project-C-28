@@ -35,11 +35,11 @@ function setup() {
 
     attach=new Throw(stones.body,{x:100,y:465})
 	
-    tree=createSprite(610,368)
+    tree=createSprite(610,350)
 	tree.addImage(treeimg)
 	tree.scale=0.5
 
-	boy=createSprite(160,550)
+	boy=createSprite(160,530)
 	boy.addImage(boyimg)
 	boy.scale=0.1
 
@@ -97,7 +97,7 @@ function detectCollision(lstone,lmango){
  stonesBodyPosition=lstone.body.position
 
  var distance=dist(stonesBodyPosition.x,stonesBodyPosition.y,mangoBodyPosition.x,mangoBodyPosition.y)
- if (distance<=lmango.d+lstone.d){
+ if (distance<=lmango.diametre+lstone.diametre){
 	 Matter.Body.setStatic(lmango.body,false)
  }
 }
