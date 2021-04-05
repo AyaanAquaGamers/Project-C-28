@@ -10,6 +10,6 @@ class Ground{
     display(){
         rectMode(CENTER)
         fill("silver")
-        rect(500,625,1200,20)
+        rect(500,590,1200,20)
     }
 }

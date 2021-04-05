@@ -21,21 +21,21 @@ function setup() {
 	world = engine.world;
 
 	dground=new Ground()
-	stones=new Stone(100,460,100)
-	mango1=new Mango(600,290,150)
-	mango2=new Mango(855,325,150)
-	mango3=new Mango(670,260,150)
-	mango4=new Mango(730,200,150)
-	mango5=new Mango(710,320,150)
-	mango6=new Mango(780,250,150)
-	mango7=new Mango(825,170,150)
-	mango8=new Mango(880,260,150)
-    mango9=new Mango(940,220,150)
-	mango10=new Mango(980,385,150)
+	stones=new Stone(100,460,30)
+	mango1=new Mango(600,290,30)
+	mango2=new Mango(855,325,30)
+	mango3=new Mango(670,260,30)
+	mango4=new Mango(730,200,30)
+	mango5=new Mango(710,320,30)
+	mango6=new Mango(780,250,30)
+	mango7=new Mango(825,170,30)
+	mango8=new Mango(880,260,30)
+    mango9=new Mango(940,220,30)
+	mango10=new Mango(980,385,30)
 
     attach=new Throw(stones.body,{x:100,y:465})
 	
-	tree=createSprite(610,368)
+    tree=createSprite(610,368)
 	tree.addImage(treeimg)
 	tree.scale=0.5
 
@@ -50,7 +50,7 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background("grey");
+  background("pink");
      
   fill("black")
   textSize(18)
@@ -93,11 +93,13 @@ function mouseReleased(){
 
 
 function detectCollision(lstone,lmango){
- if(lstone.body.position.x-lmango.body.position.x<lmango.d+lstone.d
-	&& lstone.body.position.y-lmango.body.position.y<lmango.d+lstone.d 
-	&& lstone.body.position.y-lmango.body.position.y<lmango.d+lstone.d ){
-		Matter.Body.setStatic(loadImage.body,false)
-	}
+ mangoBodyPosition=lmango.body.position
+ stonesBodyPosition=lstone.body.position
+
+ var distance=dist(stonesBodyPosition.x,stonesBodyPosition.y,mangoBodyPosition.x,mangoBodyPosition.y)
+ if (distance<=lmango.d+lstone.d){
+	 Matter.Body.setStatic(lmango.body,false)
+ }
 }
 
 function keyPressed(){
