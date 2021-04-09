@@ -1,3 +1,4 @@
+
 const Engine=Matter.Engine
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -14,7 +15,7 @@ function preload(){
 }
 
 function setup() {
-	createCanvas(900,600);
+	createCanvas(900,630);
 
 
 	engine = Engine.create();
@@ -22,24 +23,24 @@ function setup() {
 
 	dground=new Ground()
 	stones=new Stone(100,460,30)
-	mango1=new Mango(600,290,30)
-	mango2=new Mango(855,325,30)
-	mango3=new Mango(670,260,30)
+	mango1=new Mango(600,260,30)
+	mango2=new Mango(855,295,30)
+	mango3=new Mango(670,230,30)
 	mango4=new Mango(730,200,30)
-	mango5=new Mango(710,320,30)
-	mango6=new Mango(780,250,30)
+	mango5=new Mango(710,290,30)
+	mango6=new Mango(780,220,30)
 	mango7=new Mango(825,170,30)
-	mango8=new Mango(880,260,30)
-    mango9=new Mango(940,220,30)
-	mango10=new Mango(980,385,30)
+	mango8=new Mango(880,240,30)
+    mango9=new Mango(940,260,30)
+	mango10=new Mango(980,355,30)
 
-    attach=new Throw(stones.body,{x:100,y:465})
+    attach=new Throw(stones.body,{x:100,y:500})
 	
-    tree=createSprite(610,350)
+    tree=createSprite(610,320)
 	tree.addImage(treeimg)
 	tree.scale=0.5
 
-	boy=createSprite(160,530)
+	boy=createSprite(160,560)
 	boy.addImage(boyimg)
 	boy.scale=0.1
 

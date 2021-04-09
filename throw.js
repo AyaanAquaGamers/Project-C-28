@@ -3,7 +3,7 @@ class Throw{
         var options={
             bodyA:bodyA,
             pointB:pointB,
-            stiffness:0.01,
+            stiffness:0.07,
             length:10
         }
         this.pointB=pointB
